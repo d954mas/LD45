@@ -1,0 +1,71 @@
+requiref = require -- to fix cyclic dependencies
+local COMMON = require "libs.common"
+local SM = require "libs.sm.sm"
+local RX = require "libs.rx"
+local SOUNDS = require "libs.sounds"
+local LEVELS = require "scenes.game.model.levels"
+
+COMMON.empty_ne("defos")
+local Script = COMMON.new_n28s()
+
+local scenes = {
+    require "scenes.game.game_scene",
+}
+
+function Script:scenes_register()
+    local reg_scenes = {}
+    for i, v in ipairs(scenes) do reg_scenes[i] = v() end --create instances
+    SM:register(reg_scenes)
+end
+
+function Script:input_init()
+    self.show_profiler = false
+    self.input = COMMON.INPUT()
+    self.input.acquire()
+    self.input:add(COMMON.HASHES.INPUT_TOGGLE_PROFILER,self.input_toggle_profile,true)
+    self.input:add(COMMON.HASHES.INPUT_TOGGLE_PHYSICS,self.input_toggle_physics,true)
+    self.input:add(COMMON.HASHES.INPUT_TOGGLE_1,self.input_toggle_1,true)
+end
+
+function Script:input_toggle_profile()
+    self.show_profiler = not self.show_profiler
+    profiler.enable_ui(self.show_profiler)
+    profiler.set_ui_vsync_wait_visible(false)
+    return true
+end
+
+function Script:input_toggle_physics()
+    COMMON.i("toggle physics")
+    msg.post("@system:", "toggle_physics_debug")
+    return true
+end
+
+function Script:input_toggle_1()
+    return true
+end
+
+function Script:init()
+    math.randomseed(os.time())
+    self:scenes_register()
+    self:input_init()
+    SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
+end
+
+function Script:update(dt)
+    RX.MainScheduler:update(dt)
+    SM:update(dt)
+    SOUNDS:update(dt)
+    if self.test_runner then self.test_runner.update(dt) end
+end
+
+function Script:final()
+    COMMON.INPUT.clear()
+    self.input.release()
+end
+
+function Script:on_input(action_id, action)
+    COMMON.INPUT.handle_pressed_keys(action_id,action)
+    return self.input:on_input(self,action_id,action)
+end
+
+COMMON.N28S.register(Script)
