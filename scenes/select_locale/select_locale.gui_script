@@ -34,13 +34,11 @@ end
 
 function Script:on_input(action_id, action)
 	GOOEY.button("ru_root",action_id,action,function ()
-		I18N.setLocale("ru") 
-		print(LOCALE.example())
+		I18N.setLocale("ru")
 		SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
 	end,self.button_refresh_fn)
 	GOOEY.button("eng_root",action_id,action,function ()
 		I18N.setLocale("en")
-		print(LOCALE.example())
 		SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
 	end,self.button_refresh_fn)
 end

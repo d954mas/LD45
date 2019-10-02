@@ -11,6 +11,7 @@ local Script = COMMON.new_n28s()
 local scenes = {
     require "scenes.game.game_scene",
     require "scenes.select_locale.select_locale_scene",
+    require "scenes.modals.tooltip_modal.tooltip_modal",
 }
 
 function Script:scenes_register()

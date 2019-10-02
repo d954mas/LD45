@@ -1,4 +1,4 @@
-name: "select_locale"
+name: "tooltip_modal"
 instances {
   id: "scene_controller"
   prototype: "/libs/sm/go/scene_controller.go"
@@ -24,7 +24,7 @@ embedded_instances {
   id: "gui"
   data: "components {\n"
   "  id: \"gui\"\n"
-  "  component: \"/scenes/select_locale/select_locale.gui\"\n"
+  "  component: \"/scenes/modals/tooltip_modal/tooltip_modal.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

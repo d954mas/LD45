@@ -1,0 +1,40 @@
+local COMMON = require "libs.common"
+local SM = require "libs.sm.sm"
+
+local Script = COMMON.new_n28s()
+function Script:bind_vh()
+	self.vh = {
+		tooltip_1 = gui.get_node("tooltip_1"),
+		tooltip_2 = gui.get_node("tooltip_2")
+	}
+end
+
+function Script:init()
+	self:bind_vh()
+	---@type Scene
+	local prev_scene = SM.stack:peek()
+	COMMON.input_acquire()
+	gui.set_enabled(self.vh.tooltip_1,false)
+	gui.set_enabled(self.vh.tooltip_2,false)
+
+	--use scene name to understand what tooltip need to show
+	if prev_scene._name == "GameScene" then
+		gui.set_enabled(self.vh.tooltip_1,true)
+	end
+end
+
+
+function Script:final()
+	COMMON.input_release()
+end
+
+
+function Script:on_input(action_id, action)
+	if action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
+		SM:back()
+	end
+end
+
+
+
+COMMON.N28S.register(Script)
