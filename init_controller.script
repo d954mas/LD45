@@ -10,6 +10,7 @@ local Script = COMMON.new_n28s()
 
 local scenes = {
     require "scenes.game.game_scene",
+    require "scenes.select_locale.select_locale_scene",
 }
 
 function Script:scenes_register()
@@ -49,6 +50,7 @@ function Script:init()
     self:scenes_register()
     self:input_init()
     SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
+   -- SM:show("SelectLocale")
 end
 
 function Script:update(dt)

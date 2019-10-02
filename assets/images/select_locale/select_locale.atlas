@@ -1,0 +1,9 @@
+images {
+  image: "/assets/images/select_locale/ru.png"
+}
+images {
+  image: "/assets/images/select_locale/eng.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

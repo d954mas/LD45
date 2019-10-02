@@ -3,40 +3,8 @@ key_trigger {
   action: "toggle_profile"
 }
 key_trigger {
-  input: KEY_BACKSPACE
-  action: "backspace"
-}
-key_trigger {
-  input: KEY_W
-  action: "up"
-}
-key_trigger {
-  input: KEY_A
-  action: "left"
-}
-key_trigger {
-  input: KEY_S
-  action: "down"
-}
-key_trigger {
-  input: KEY_D
-  action: "right"
-}
-key_trigger {
   input: KEY_9
   action: "toggle_debug_gui"
-}
-key_trigger {
-  input: KEY_SPACE
-  action: "jump"
-}
-key_trigger {
-  input: KEY_R
-  action: "reset"
-}
-key_trigger {
-  input: KEY_ESC
-  action: "escape"
 }
 key_trigger {
   input: KEY_8
@@ -45,10 +13,6 @@ key_trigger {
 key_trigger {
   input: KEY_1
   action: "toggle_debug_game_info_gui"
-}
-key_trigger {
-  input: KEY_E
-  action: "action"
 }
 mouse_trigger {
   input: MOUSE_BUTTON_1
@@ -60,11 +24,15 @@ mouse_trigger {
 }
 mouse_trigger {
   input: MOUSE_WHEEL_UP
-  action: "scroll_up"
+  action: "mouse_wheel_up"
 }
 mouse_trigger {
   input: MOUSE_WHEEL_DOWN
-  action: "scroll_down"
+  action: "mouse_wheel_down"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_3
+  action: "button_3"
 }
 text_trigger {
   input: TEXT

@@ -3,7 +3,7 @@ local COMMON = require "libs.common"
 local TAG = "LOCALIZATION"
 local LOCALES ={"en","ru"}
 local DEFAULT = "en"
-local FALLBACK = "ru"
+local FALLBACK = "en"
 
 ---@class Localization
 local M = {
@@ -39,6 +39,7 @@ for k,v in pairs(M)do
 end
 
 --return key if value not founded
+---@type Localization
 local t  = setmetatable( {__VALUE = M,}, {
 	__index = function(_, k)
 		local result = M[k]
@@ -54,5 +55,6 @@ local t  = setmetatable( {__VALUE = M,}, {
 
 --fix cycle dependencies
 COMMON.LOCALE = t
+
 
 return t

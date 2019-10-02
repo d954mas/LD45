@@ -1,0 +1,50 @@
+local COMMON = require "libs.common"
+local GOOEY = require "gooey.gooey"
+local SM = require "libs.sm.sm"
+local LEVELS = require "scenes.game.model.levels"
+local I18N = require "libs.i18n.init"
+local LOCALE = require "assets.localization.localization"
+
+local Script = COMMON.new_n28s()
+
+
+
+function Script:bind_vh()
+	self.vh = {}
+	local button_default_scale = gui.get_scale(gui.get_node("ru_root"))
+	self.button_refresh_fn = function(button)
+		if button.pressed then
+			gui.set_scale(button.node,button_default_scale * 0.9)
+		else
+			gui.set_scale(button.node,button_default_scale)
+		end
+	end
+end
+
+function Script:init()
+	self:bind_vh()
+	COMMON.input_acquire()
+end
+
+
+function Script:final()
+	COMMON.input_release()
+end
+
+
+function Script:on_input(action_id, action)
+	GOOEY.button("ru_root",action_id,action,function ()
+		I18N.setLocale("ru") 
+		print(LOCALE.example())
+		SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
+	end,self.button_refresh_fn)
+	GOOEY.button("eng_root",action_id,action,function ()
+		I18N.setLocale("en")
+		print(LOCALE.example())
+		SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
+	end,self.button_refresh_fn)
+end
+
+
+
+COMMON.N28S.register(Script)

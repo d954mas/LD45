@@ -52,7 +52,7 @@ app_icon_144x144 = /assets/mobile/app_icons/icon_144.png
 app_icon_192x192 = /assets/mobile/app_icons/icon_192.png
 gcm_sender_id = 
 push_field_text = 
-manifest = 
+manifest = /builtins/manifests/android/AndroidManifest.xml
 
 [graphics]
 texture_profiles = /render/my.texture_profiles
@@ -117,7 +117,7 @@ iap_provider =
 
 [html5]
 archive_location_prefix = archive
-htmlfile = 
+htmlfile = /builtins/manifests/web/engine_template.html
 show_fullscreen_button = 0
 show_made_with_defold = 1
 
