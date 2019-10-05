@@ -23,8 +23,8 @@ instances {
   id: "camera"
   prototype: "/rendercam/camera.go"
   position {
-    x: 0.0
-    y: 0.0
+    x: 540.0
+    y: 960.0
     z: 0.0
   }
   rotation {
@@ -72,7 +72,7 @@ instances {
     }
     properties {
       id: "aspectRatio"
-      value: "1920.0, 1080.0, 0.0"
+      value: "1080.0, 1920.0, 0.0"
       type: PROPERTY_TYPE_VECTOR3
     }
     properties {
@@ -82,7 +82,7 @@ instances {
     }
     properties {
       id: "viewArea"
-      value: "1920.0, 1080.0, 0.0"
+      value: "1080.0, 1920.0, 0.0"
       type: PROPERTY_TYPE_VECTOR3
     }
     properties {
@@ -137,8 +137,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
-    y: 0.0
+    x: 540.0
+    y: 960.0
     z: 0.0
   }
   rotation {

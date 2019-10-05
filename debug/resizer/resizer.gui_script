@@ -1,14 +1,14 @@
 local COMMON = require "libs.common"
-local WIDTH = 1920
-local HEIGHT = 1080
+local WIDTH = 1080
+local HEIGHT = 1920
 local HORIZONTAL = false
-local RESOLUTION_SCALE = 0.5
+local RESOLUTION_SCALE = 0.35
 local INIT_SIZE = 2
 local TAG = "RESIZER"
 local resolutions = {
-	{19.5,9},
-	{16,9},
-	{4,3},
+	{9,19.5},
+	{9,16},
+	{3,4},
 }
 local sizes = {}
 for _,size in ipairs(resolutions) do

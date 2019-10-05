@@ -15,8 +15,8 @@ game_binding = /game.input_bindingc
 use_accelerometer = 0
 
 [display]
-width = 1920
-height = 1080
+width = 1080
+height = 1920
 high_dpi = 1
 fullscreen = 0
 update_frequency = 60
