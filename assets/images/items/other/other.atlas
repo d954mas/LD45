@@ -1,0 +1,12 @@
+images {
+  image: "/assets/images/items/other/body_1.png"
+}
+images {
+  image: "/assets/images/items/other/ears_1.png"
+}
+images {
+  image: "/assets/images/items/other/clothe_1.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

@@ -56,8 +56,8 @@ manifest = /builtins/manifests/android/AndroidManifest.xml
 
 [graphics]
 texture_profiles = /render/my.texture_profiles
-default_texture_min_filter = nearest
-default_texture_mag_filter = nearest
+default_texture_min_filter = linear
+default_texture_mag_filter = linear
 max_debug_vertices = 100000
 
 [sound]
