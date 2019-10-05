@@ -10,6 +10,7 @@ local Script = COMMON.new_n28s()
 
 local scenes = {
     require "scenes.game.game_scene",
+    require "scenes.start.start_scene",
     require "scenes.select_locale.select_locale_scene",
     require "scenes.modals.tooltip_modal.tooltip_modal",
 }
@@ -50,8 +51,8 @@ function Script:init()
     math.randomseed(os.time())
     self:scenes_register()
     self:input_init()
-    SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
-   -- SM:show("SelectLocale")
+   -- SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
+    SM:show("StartScene")
 end
 
 function Script:update(dt)
