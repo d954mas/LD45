@@ -9,16 +9,28 @@ local Script = COMMON.new_n28s()
 function Script:bind_vh()
 	self.vh = {
 		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
-		btn_send = {name = "btn_send", root = gui.get_node("btn_send/bg")}
+		btn_send = {name = "btn_send", root = gui.get_node("btn_send/bg")},
+		btn_meet = {name = "btn_meet", root = gui.get_node("btn_meet/bg")},
+		chat_3 = {root = gui.get_node("chat_3/root")},
+		chat_4 = {root = gui.get_node("chat_4/root")},
+		chat_5 = {root = gui.get_node("chat_5/root")},
 	}
+
+	gui.set_enabled(self.vh.chat_3.root,false)
+	gui.set_enabled(self.vh.btn_meet.root,false)
+	gui.set_enabled(self.vh.chat_4.root,false)
+	gui.set_enabled(self.vh.chat_5.root,false)
 end
 
 function Script:init()
 	self:bind_vh()
 	COMMON.input_acquire()
+	self.scheduler = COMMON.RX.CooperativeScheduler.create()
 end
 
-function Script:update(dt)end
+function Script:update(dt)
+	self.scheduler:update(dt)
+end
 
 function Script:final()
 	COMMON.input_release()
@@ -28,8 +40,25 @@ end
 function Script:on_input(action_id, action)
 	GUI_UTILS.btn_question(self.vh.btn_question.name,action_id,action)
 	GOOEY_DL.button(self.vh.btn_send.name, action_id, action, function(button)
+		COMMON.input_release()
+		self.scheduler:schedule(function ()
+			gui.set_enabled(self.vh.btn_send.root,false)
+			coroutine.yield(0.2)
+			gui.set_enabled(self.vh.chat_3.root,true)
+			coroutine.yield(0.5)
+			gui.set_enabled(self.vh.chat_4.root,true)
+			coroutine.yield(0.5)
+			gui.set_enabled(self.vh.chat_5.root,true)
+			coroutine.yield(0.1)
+			gui.set_enabled(self.vh.btn_meet.root,true)
+			COMMON.input_acquire()
+		end,0)
+	end)
+	GOOEY_DL.button(self.vh.btn_meet.name, action_id, action, function(button)
 		SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
 	end)
+
+
 end
 
 
