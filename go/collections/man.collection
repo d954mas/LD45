@@ -1,7 +1,12 @@
-name: "game"
-instances {
-  id: "scene_controller"
-  prototype: "/libs/sm/go/scene_controller.go"
+name: "default"
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "eye"
+  children: "head"
+  children: "mouse"
+  children: "nose"
+  data: ""
   position {
     x: 0.0
     y: 0.0
@@ -19,14 +24,13 @@ instances {
     z: 1.0
   }
 }
-scale_along_z: 1
 embedded_instances {
-  id: "bg"
+  id: "head"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/assets/images/bg/bg.atlas\\\"\\n"
-  "default_animation: \\\"bg_1\\\"\\n"
+  "  data: \"tile_set: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -44,41 +48,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 540.0
-    y: 960.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "gui"
-  data: "components {\n"
-  "  id: \"game\"\n"
-  "  component: \"/scenes/game/gui/game.gui\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
     x: 0.0
     y: 0.0
     z: 0.0
@@ -96,19 +65,18 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go"
+  id: "mouse"
   data: "embedded_components {\n"
-  "  id: \"spinemodel\"\n"
-  "  type: \"spinemodel\"\n"
-  "  data: \"spine_scene: \\\"/assets/animations/clock/clock.spinescene\\\"\\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"\\\"\\n"
   "default_animation: \\\"\\\"\\n"
-  "skin: \\\"\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
-  "material: \\\"/builtins/materials/spine.material\\\"\\n"
   "\"\n"
   "  position {\n"
-  "    x: 507.0\n"
-  "    y: 777.0\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -122,7 +90,87 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.1
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "eye"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "nose"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
   }
   rotation {
     x: 0.0

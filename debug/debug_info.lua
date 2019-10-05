@@ -18,16 +18,13 @@ end
 function M.update(dt)
 	if M.GAME_CONTROLLER.level then
 		M.entities = #M.GAME_CONTROLLER.level.ecs_world.ecs.entities
-		M.enemies = COMMON.LUME.countp(ENTITIES.enemies)
 	end
 end
 
 
 ---@param system DrawWallsSystem
 function M.update_draw_walls_system(system)
-	M.walls = COMMON.LUME.countp(system.wall_objects)
-	M.walls_transparent = COMMON.LUME.count(system.wall_objects,function(v) return v.transparent_object end)
-	M.walls_total = M.walls + M.walls_transparent
+
 end
 
 

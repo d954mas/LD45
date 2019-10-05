@@ -1,6 +1,7 @@
 local COMMON = require "libs.common"
 local ENTITIES = require "scenes.game.model.ecs.entities.entities"
 local ECS_WORLD = require "scenes.game.model.ecs.ecs"
+local Face = require "common.face.face_model"
 
 local TAG = "Level"
 
@@ -8,11 +9,11 @@ local TAG = "Level"
 local Level = COMMON.class("Level")
 
 ---@param data LevelData
-function Level:initialize(data)
-	self.data = assert(data)
+function Level:initialize()
 	self.ecs_world = ECS_WORLD()
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
 	self:register_world_entities_callbacks()
+	self.face = Face()
 end
 
 function Level:register_world_entities_callbacks()

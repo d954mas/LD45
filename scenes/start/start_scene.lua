@@ -3,29 +3,23 @@ local COMMON = require "libs.common"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local SM = require "libs.sm.sm"
 
----@class GameScene:Scene
-local Scene = BaseScene:subclass("GameScene")
+---@class StartScene:Scene
+local Scene = BaseScene:subclass("StartScene")
 function Scene:initialize()
-    BaseScene.initialize(self, "GameScene", "/game#proxy", "game:/scene_controller")
+    BaseScene.initialize(self, "StartScene", "/start#proxy", "start:/scene_controller")
 end
 function Scene:on_show()
     COMMON.input_acquire()
-    spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_LOOP_FORWARD)
+    GAME_CONTROLLER:load_level()
 end
 
 function Scene:on_hide()
     COMMON.input_release()
 end
 
-function Scene:on_final(go_self)
-    GAME_CONTROLLER:dispose()
-end
 
 function Scene:on_update(dt)
-    self.dt = dt
     BaseScene.on_update(self,dt)
-    GAME_CONTROLLER:update(dt)
-    msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
 end
 
 function Scene:on_input(action_id, action)

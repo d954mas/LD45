@@ -7,6 +7,15 @@ images {
 images {
   image: "/assets/images/gui/icon_question.png"
 }
+images {
+  image: "/assets/images/gui/icon_man.png"
+}
+images {
+  image: "/assets/images/gui/icon_woman.png"
+}
+images {
+  image: "/assets/images/gui/chat_circle.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
