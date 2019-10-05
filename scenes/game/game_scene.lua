@@ -10,6 +10,7 @@ function Scene:initialize()
 end
 function Scene:on_show()
     COMMON.input_acquire()
+    spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_LOOP_FORWARD)
 end
 
 function Scene:on_hide()
