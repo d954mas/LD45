@@ -4,7 +4,7 @@ local M = {}
 
 local ATLAS = {"eyebrow", "eyes", "hair", "face"}
 local ITEMS = {{"eyebrow_1", "eyebrow_2", "eyebrow_3"},
-			   {"eyes_1", "eyes_2"},
+			   {"eyes_1", "eyes_2", "lip_2"},
 			   {"hair_1", "hair_2", "hair_3"},
 			   {"face_1", "face_1", "face_1"}
 			  }
@@ -15,10 +15,10 @@ function M.button_items(action_id,action)
 	local new_items = {}
 	
 	if action_id == hash("touch") and action.pressed then
-		local buttons = {gui.get_node("button_item_1/button_1"), 
-		gui.get_node("button_item_1/button_2"), 
-		gui.get_node("button_item_1/button_3"), 
-		gui.get_node("button_item_1/button_4")}
+		local buttons = {gui.get_node("button_item/button_1"), 
+		gui.get_node("button_item/button_2"), 
+		gui.get_node("button_item/button_3"), 
+		gui.get_node("button_item/button_4")}
 
 		for i = 1, #buttons do  										-- <Находим кнопку по которой кликнули.>
 			if gui.pick_node(buttons[i], action.x, action.y) then

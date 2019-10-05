@@ -7,7 +7,6 @@ local Script = COMMON.new_n28s()
 function Script:bind_vh()
 	self.vh = {
 		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
-		button_item_1 = {name = "button_item_1/button_1", root = gui.get_node("button_item_1/button_1")} ---
 	}
 end
 
