@@ -1,146 +1,25 @@
-script: "/scenes/game/gui/game.gui_script"
-fonts {
-  name: "roboto_bold"
-  font: "/assets/fonts/roboto_bold.font"
+script: ""
+textures {
+  name: "hair"
+  texture: "/assets/images/items/hair/hair.atlas"
+}
+textures {
+  name: "eyes"
+  texture: "/assets/images/items/eyes/eyes.atlas"
+}
+textures {
+  name: "eyebrow"
+  texture: "/assets/images/items/eyebrow/eyebrow.atlas"
+}
+textures {
+  name: "face"
+  texture: "/assets/images/items/face/face.atlas"
 }
 background_color {
   x: 0.0
   y: 0.0
   z: 0.0
   w: 0.0
-}
-nodes {
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "btn_question"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/assets/templates/question.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 1815.0
-    y: 978.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 2.0
-    y: 2.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 100.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/icon_question"
-  id: "btn_question/root"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "btn_question"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "button_item_1"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/assets/templates/items.gui"
-  template_node_child: false
 }
 nodes {
   position {
@@ -176,12 +55,11 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "hair/hair_1"
-  id: "button_item_1/button_1"
+  id: "button_1"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item_1"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -194,7 +72,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
@@ -231,12 +109,11 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "hair/hair_2"
-  id: "button_item_1/button_2"
+  id: "button_2"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item_1"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -249,7 +126,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
@@ -286,12 +163,11 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "hair/hair_2"
-  id: "button_item_1/button_3"
+  id: "button_3"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item_1"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -304,7 +180,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
@@ -341,12 +217,11 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "hair/hair_3"
-  id: "button_item_1/button_4"
+  id: "button_4"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item_1"
   layer: ""
   inherit_alpha: true
   slice9 {
@@ -359,7 +234,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  template_node_child: true
+  template_node_child: false
   size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"

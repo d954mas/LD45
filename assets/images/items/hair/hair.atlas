@@ -1,0 +1,12 @@
+images {
+  image: "/assets/images/items/hair/hair_1.png"
+}
+images {
+  image: "/assets/images/items/hair/hair_2.png"
+}
+images {
+  image: "/assets/images/items/hair/hair_3.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

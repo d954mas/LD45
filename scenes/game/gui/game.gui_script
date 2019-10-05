@@ -1,11 +1,13 @@
 local COMMON = require "libs.common"
 local GUI_UTILS = require "libs.gui_utils"
+local BUTTONS_ITEMS = require "libs.buttons_items" ---
 
 local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.vh = {
-		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")}
+		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
+		button_item_1 = {name = "button_item_1/button_1", root = gui.get_node("button_item_1/button_1")} ---
 	}
 end
 
@@ -23,6 +25,7 @@ end
 
 function Script:on_input(action_id, action)
 	GUI_UTILS.btn_question(self.vh.btn_question.name,action_id,action)
+	BUTTONS_ITEMS.button_items(action_id,action)
 end
 
 

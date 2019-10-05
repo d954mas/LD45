@@ -1,0 +1,12 @@
+images {
+  image: "/assets/images/items/face/face_1.png"
+}
+images {
+  image: "/assets/images/items/face/face_2.png"
+}
+images {
+  image: "/assets/images/items/face/face_3.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
