@@ -16,9 +16,9 @@ function M.button_items(action_id,action)
 	
 	if action_id == hash("touch") and action.pressed then
 		local buttons = {gui.get_node("button_item/button_1"), 
-		gui.get_node("button_item/button_2"), 
-		gui.get_node("button_item/button_3"), 
-		gui.get_node("button_item/button_4")}
+						gui.get_node("button_item/button_2"), 
+						gui.get_node("button_item/button_3"), 
+						gui.get_node("button_item/button_4")}
 
 		for i = 1, #buttons do  										-- <Находим кнопку по которой кликнули.>
 			if gui.pick_node(buttons[i], action.x, action.y) then
