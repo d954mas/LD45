@@ -1,0 +1,39 @@
+images {
+  image: "/assets/animations/girl/clothes.png"
+}
+images {
+  image: "/assets/animations/girl/eyebrows.png"
+}
+images {
+  image: "/assets/animations/girl/eyes_closed.png"
+}
+images {
+  image: "/assets/animations/girl/eyes_filling.png"
+}
+images {
+  image: "/assets/animations/girl/face.png"
+}
+images {
+  image: "/assets/animations/girl/hair_back.png"
+}
+images {
+  image: "/assets/animations/girl/left_hair.png"
+}
+images {
+  image: "/assets/animations/girl/lips_normal.png"
+}
+images {
+  image: "/assets/animations/girl/lips_sad.png"
+}
+images {
+  image: "/assets/animations/girl/lips_smile.png"
+}
+images {
+  image: "/assets/animations/girl/pupil.png"
+}
+images {
+  image: "/assets/animations/girl/right_hair.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

@@ -75,6 +75,16 @@ function Face:random()
     self.hair = COMMON.LUME.randomchoice(Face.HAIR)
     self.mouth = COMMON.LUME.randomchoice(Face.MOUTH)
     self.nose = COMMON.LUME.randomchoice(Face.NOSE)
+    self:changed()
+end
+
+---@param view FaceView
+function Face:set_view(view)
+    self.view = assert(view)
+end
+
+function Face:changed()
+    if self.view then self.view:face_changed() end
 end
 
 --for DEBUG

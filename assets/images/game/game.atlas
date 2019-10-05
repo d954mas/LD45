@@ -4,6 +4,12 @@ images {
 images {
   image: "/assets/images/white.png"
 }
+images {
+  image: "/assets/images/game/bubble_up.png"
+}
+images {
+  image: "/assets/images/game/bubble_under.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

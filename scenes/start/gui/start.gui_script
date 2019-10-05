@@ -18,7 +18,7 @@ function Script:bind_vh()
 	}
 
 	gui.set_enabled(self.vh.chat_3.root,false)
-	gui.set_enabled(self.vh.btn_meet.root,false)
+--	gui.set_enabled(self.vh.btn_meet.root,false)
 	gui.set_enabled(self.vh.chat_4.root,false)
 	gui.set_enabled(self.vh.chat_5.root,false)
 end

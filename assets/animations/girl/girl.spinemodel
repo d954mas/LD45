@@ -1,0 +1,5 @@
+spine_scene: "/assets/animations/girl/girl.spinescene"
+default_animation: "tyan_neitral"
+skin: ""
+blend_mode: BLEND_MODE_ALPHA
+material: "/builtins/materials/spine.material"
