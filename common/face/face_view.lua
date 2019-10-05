@@ -1,5 +1,6 @@
 local COMMON = require "libs.common"
 
+---@class FaceView
 local Face = COMMON.class("Face")
 
 Face.HEAD = {}
@@ -9,36 +10,48 @@ Face.NOSE = {}
 
 function Face:initialize(collection,model)
     if type(collection) == "table" then
-        self.collection = {
-            root = msg.url(collection[hash("root")]),
-            head = msg.url(collection[hash("head")]),
-            eye = msg.url(collection[hash("eye")]),
-            mouth = msg.url(collection[hash("mouth")]),
-            nose = msg.url(collection[hash("nose")])
-        }
     else
+        print(collection .. "/" .. "root")
         self.collection = {
-            root = msg.url(go.get(collection .. "/" .. "root")),
-            head = msg.url(go.get(collection .. "/" .. "head")),
-            eye = msg.url(go.get(collection .. "/" .. "eye")),
-            mouth = msg.url(go.get(collection .. "/" .. "mouth")),
-            nose = msg.url(go.get(collection .. "/" .. "nose")),
+            root = msg.url(collection .. "/" .. "root"),
+            body = msg.url(collection .. "/" .. "body"),
+            cloth = msg.url(collection .. "/" .. "cloth"),
+            ears = msg.url(collection .. "/" .. "ears"),
+            eye = msg.url(collection .. "/" .. "eye"),
+            eye_brow = msg.url(collection .. "/" .. "eye_brow"),
+            face = msg.url(collection .. "/" .. "face"),
+            hair = msg.url(collection .. "/" .. "hair"),
+            mouth = msg.url(collection .. "/" .. "mouth"),
+            nose = msg.url(collection .. "/" .. "nose"),
         }
     end
     self.collection_sprites = {
-        head = msg.url(self.collection.head.socket,self.collection.head.path,"sprite"),
+        body = msg.url(self.collection.body.socket,self.collection.body.path,"sprite"),
+        cloth = msg.url(self.collection.cloth.socket,self.collection.cloth.path,"sprite"),
+        ears = msg.url(self.collection.ears.socket,self.collection.ears.path,"sprite"),
         eye = msg.url(self.collection.eye.socket,self.collection.eye.path,"sprite"),
+        eye_brow = msg.url(self.collection.eye_brow.socket,self.collection.eye_brow.path,"sprite"),
+        face = msg.url(self.collection.face.socket,self.collection.face.path,"sprite"),
+        hair = msg.url(self.collection.hair.socket,self.collection.hair.path,"sprite"),
         mouth = msg.url(self.collection.mouth.socket,self.collection.mouth.path,"sprite"),
         nose = msg.url(self.collection.nose.socket,self.collection.nose.path,"sprite"),
     }
-   self.model = assert(model)
+    self:set_face(model)
+end
+
+function Face:set_face(face)
+    self.model = assert(face)
+    self:face_changed()
 end
 
 function Face:face_changed()
-    sprite.play_flipbook(self.collection_sprites.head,self.model.head)
-    sprite.play_flipbook(self.collection_sprites.eye,self.model.eye)
-    sprite.play_flipbook(self.collection_sprites.mouth,self.model.mouth)
-    sprite.play_flipbook(self.collection_sprites.nose,self.model.nose)
+    for k,v in pairs(self.collection_sprites) do
+        if not self.model[k] then
+            print("sss")
+        end
+        assert(self.model[k],"no key " .. tostring(k))
+        sprite.play_flipbook(v,self.model[k].img)
+    end
 end
 
 

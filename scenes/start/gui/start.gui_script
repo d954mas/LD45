@@ -10,6 +10,7 @@ function Script:bind_vh()
 	self.vh = {
 		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
 		btn_send = {name = "btn_send", root = gui.get_node("btn_send/bg")},
+		btn_debug_face = {name = "btn_debug_face", root = gui.get_node("btn_debug_face/bg")},
 		btn_meet = {name = "btn_meet", root = gui.get_node("btn_meet/bg")},
 		chat_3 = {root = gui.get_node("chat_3/root")},
 		chat_4 = {root = gui.get_node("chat_4/root")},
@@ -56,6 +57,9 @@ function Script:on_input(action_id, action)
 	end)
 	GOOEY_DL.button(self.vh.btn_meet.name, action_id, action, function(button)
 		SM:show("GameScene")
+	end)
+	GOOEY_DL.button(self.vh.btn_debug_face.name, action_id, action, function(button)
+		SM:show("TestFace")
 	end)
 
 

@@ -4,6 +4,7 @@ local SM = require "libs.sm.sm"
 local RX = require "libs.rx"
 local SOUNDS = require "libs.sounds"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
+local FaceModel = require "common.face.face_model"
 
 COMMON.empty_ne("defos")
 local Script = COMMON.new_n28s()
@@ -13,6 +14,7 @@ local scenes = {
     require "scenes.start.start_scene",
     require "scenes.select_locale.select_locale_scene",
     require "scenes.modals.tooltip_modal.tooltip_modal",
+    require "scenes.test_face.test_face",
 }
 
 function Script:scenes_register()
