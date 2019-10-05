@@ -55,7 +55,7 @@ function Script:on_input(action_id, action)
 		end,0)
 	end)
 	GOOEY_DL.button(self.vh.btn_meet.name, action_id, action, function(button)
-		SM:show("GameScene",{level = LEVELS.LEVELS.PROTOTYPE})
+		SM:show("GameScene")
 	end)
 
 

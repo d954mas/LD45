@@ -10,6 +10,7 @@ function Scene:initialize()
 end
 function Scene:on_show()
     COMMON.input_acquire()
+    GAME_CONTROLLER:load_level()
 end
 
 function Scene:on_hide()
