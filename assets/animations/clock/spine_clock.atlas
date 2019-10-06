@@ -5,17 +5,16 @@ images {
   image: "/assets/animations/clock/oval.png"
 }
 images {
+  image: "/assets/animations/clock/part1.png"
+}
+images {
+  image: "/assets/animations/clock/part3.png"
+}
+images {
   image: "/assets/animations/clock/strelka.png"
 }
-animations {
-  id: "Clock/strelka"
-  images {
-    image: "/assets/animations/clock/strelka.png"
-  }
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 60
-  flip_horizontal: 0
-  flip_vertical: 0
+images {
+  image: "/assets/animations/clock/tochka.png"
 }
 margin: 0
 extrude_borders: 2
