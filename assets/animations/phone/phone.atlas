@@ -1,0 +1,33 @@
+images {
+  image: "/assets/animations/phone/avatar.png"
+}
+images {
+  image: "/assets/animations/phone/black.png"
+}
+images {
+  image: "/assets/animations/phone/black_ekran.png"
+}
+images {
+  image: "/assets/animations/phone/button.png"
+}
+images {
+  image: "/assets/animations/phone/dialog1.png"
+}
+images {
+  image: "/assets/animations/phone/dialog2.png"
+}
+images {
+  image: "/assets/animations/phone/dialog3.png"
+}
+images {
+  image: "/assets/animations/phone/green.png"
+}
+images {
+  image: "/assets/animations/phone/phone.png"
+}
+images {
+  image: "/assets/animations/phone/SexyGirl_.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0

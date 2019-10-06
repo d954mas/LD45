@@ -1,0 +1,5 @@
+spine_scene: "/assets/animations/phone/phone.spinescene"
+default_animation: "phone_chat"
+skin: ""
+blend_mode: BLEND_MODE_ALPHA
+material: "/builtins/materials/spine.material"
