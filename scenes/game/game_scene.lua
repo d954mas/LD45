@@ -19,6 +19,7 @@ function Scene:initialize()
     BaseScene.initialize(self, "GameScene", "/game#proxy", "game:/scene_controller")
 end
 function Scene:on_show()
+    self.finished = false
     COMMON.input_acquire()
     self.face_view = FaceView("/man",GAME_CONTROLLER.level.face)
     self.face_ideal = FaceView("/man_ideal",GAME_CONTROLLER.level.face_ideal)
@@ -41,16 +42,17 @@ function Scene:on_update(dt)
     GAME_CONTROLLER:update(dt)
     msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
 
+    if self.finished then return end
     if GAME_CONTROLLER.win then
         sound.play("/sounds#win")
-        label.set_text("/lbl_start#label","WIN")
         sound.stop("/sounds#timer")
-        msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
+        SM:show("WinModal")
+        self.finished = true
     end
     if GAME_CONTROLLER.lose then
-        label.set_text("/lbl_start#label","LOSE")
         sound.stop("/sounds#timer")
-        msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
+        SM:show("LoseModal")
+        self.finished = true
     end
 end
 

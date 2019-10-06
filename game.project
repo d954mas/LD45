@@ -1,7 +1,7 @@
 [project]
 title = LD45
 version = 0.1.0
-dependencies = https://github.com/subsoap/defos/archive/master.zip
+dependencies = https://github.com/subsoap/defos/archive/master.zip,https://github.com/defold/extension-gps/archive/master.zip
 custom_resources = 
 bundle_exclude_resources = 
 bundle_resources = 
