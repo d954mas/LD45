@@ -200,7 +200,7 @@ function M.coroutine_wait(time)
 	assert(time)
 	local dt = 0
 	while dt<time do
-		dt = dt + coroutine.yield()
+		dt = dt + (coroutine.yield() or 1/60)
 	end
 end
 
