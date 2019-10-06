@@ -28,6 +28,12 @@ images {
 images {
   image: "/assets/images/gui/photo.png"
 }
+images {
+  image: "/assets/images/gui/boy_dialog.png"
+}
+images {
+  image: "/assets/images/gui/button_cloze.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

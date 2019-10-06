@@ -42,6 +42,8 @@ function Script:update(dt)
 		gui.play_flipbook(self.vh.cells[i].item, part.img)
 		gui.set_scale(self.vh.cells[i].item,vmath.vector3(scales[atlas] or 1))
 	end
+
+	gui.set_enabled(gui.get_node("boy_text"),not GAME_CONTROLLER.started)
 end
 
 function Script:final()
