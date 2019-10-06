@@ -35,6 +35,10 @@ textures {
   name: "other"
   texture: "/assets/images/items/other/other.atlas"
 }
+textures {
+  name: "gui_2"
+  texture: "/assets/images/gui/gui_2.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -137,8 +141,8 @@ nodes {
 }
 nodes {
   position {
-    x: 140.0
-    y: 147.0
+    x: 540.0
+    y: 170.0
     z: 0.0
     w: 1.0
   }
@@ -149,8 +153,62 @@ nodes {
     w: 1.0
   }
   scale {
+    x: 1.04
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1044.0
+    y: 318.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
     x: 1.0
     y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "gui/plashka1"
+  id: "plashka"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 162.0
+    y: 169.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 0.94
+    y: 0.94
     z: 1.0
     w: 1.0
   }
