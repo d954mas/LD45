@@ -7,6 +7,9 @@ images {
 images {
   image: "/assets/images/items/eyebrow/eyebrow_3.png"
 }
+images {
+  image: "/assets/images/items/eyebrow/eyebrow_4.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

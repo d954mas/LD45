@@ -24,8 +24,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
+    x: 2.0
+    y: 2.0
     z: 1.0
   }
 }
@@ -41,7 +41,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 245.0\n"
+  "    y: 44.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -81,7 +81,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 316.0\n"
+  "    y: 55.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -121,7 +121,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 47.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -161,7 +161,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: -42.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -201,7 +201,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 275.0\n"
+  "    y: 45.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -241,7 +241,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: -161.5\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -264,9 +264,9 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 4.0
-    y: 4.0
-    z: 4.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
   }
 }
 embedded_instances {
@@ -281,7 +281,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: -161.0\n"
+  "    y: 43.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -321,7 +321,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 377.0\n"
+  "    y: 56.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -361,7 +361,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 411.0\n"
+  "    y: 43.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
