@@ -1,12 +1,14 @@
 local COMMON = require "libs.common"
 local GUI_UTILS = require "libs.gui_utils"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
-
+local GOOEY_DL = require "gooey.themes.dirtylarry.dirtylarry"
+local SM = require "libs.sm.sm"
 local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.vh = {
 		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
+		btn_back = {name = "btn_back", root = gui.get_node("btn_back/bg")},
 		cells = {
 			{name = "cell_1",root = gui.get_node("cell_1/root"), item = gui.get_node("cell_1/root/item")},
 			{name = "cell_2",root = gui.get_node("cell_2/root"), item = gui.get_node("cell_2/root/item")},
@@ -55,6 +57,9 @@ function Script:on_input(action_id, action)
 			GAME_CONTROLLER:item_cell_clicked(i)
 		end
 	end
+	GOOEY_DL.button(self.vh.btn_back.name, action_id, action, function(button)
+		SM:show("StartScene")
+	end)
 end
 
 
