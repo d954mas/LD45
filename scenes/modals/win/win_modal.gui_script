@@ -1,0 +1,36 @@
+local COMMON = require "libs.common"
+local SM = require "libs.sm.sm"
+local GOOEY_DL = require "gooey.themes.dirtylarry.dirtylarry"
+
+local Script = COMMON.new_n28s()
+function Script:bind_vh()
+
+end
+
+function Script:init()
+	gui.set_render_order(13)
+	COMMON.input_acquire()
+	self.vh = {
+		btn_back = {name = "btn_back", root = gui.get_node("btn_back/bg")},
+	}
+end
+
+
+function Script:final()
+	COMMON.input_release()
+end
+
+
+function Script:on_input(action_id, action)
+	GOOEY_DL.button(self.vh.btn_back.name, action_id, action, function(button)
+		SM:back()
+		COMMON.RX.MainScheduler:schedule(function ()
+			while(SM.co) do coroutine.yield() end
+			SM:show("StartScene")
+		end,0)
+	end)
+end
+
+
+
+COMMON.N28S.register(Script)

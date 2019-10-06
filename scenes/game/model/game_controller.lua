@@ -38,7 +38,7 @@ function M:start_game()
     local playback_rate = go.get("/go#spinemodel", "playback_rate")
     -- Set the playback_rate to double the previous value.
     local time = 7.375
-    local need_time = 20
+    local need_time = 16
     self.time_scale = time/need_time
     sound.play("/sounds#timer")
 	spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_ONCE_FORWARD,{playback_rate = self.time_scale},function()
