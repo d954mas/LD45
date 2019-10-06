@@ -43,9 +43,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.3019608
-    y: 0.3019608
-    z: 0.3019608
+    x: 0.47843137
+    y: 0.47843137
+    z: 0.47843137
     w: 1.0
   }
   type: TYPE_BOX
@@ -67,7 +67,7 @@ nodes {
   clipping_mode: CLIPPING_MODE_NONE
   clipping_visible: true
   clipping_inverted: false
-  alpha: 0.69
+  alpha: 0.5
   template_node_child: false
   size_mode: SIZE_MODE_MANUAL
 }
