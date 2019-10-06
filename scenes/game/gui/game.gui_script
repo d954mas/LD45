@@ -35,6 +35,7 @@ function Script:update(dt)
 		mouth = 0.33,
 		nose = 2,
 	}
+	local max_scale = 4
 	for i=1,4 do
 		local part = GAME_CONTROLLER.level.face_current_parts[i]
 		local atlas = part.atlas
@@ -44,6 +45,14 @@ function Script:update(dt)
 	end
 
 	gui.set_enabled(gui.get_node("boy_text"),not GAME_CONTROLLER.started)
+
+	for i=1,4 do
+		local max_size = gui.get_size(self.vh.cells[i].root)
+		local size = gui.get_size(self.vh.cells[i].item)
+		local scale = math.min(max_size.x/size.x,max_size.y/size.y)
+		scale = math.min(max_scale,scale)
+		gui.set_scale(self.vh.cells[i].item,vmath.vector3(scale))
+	end
 end
 
 function Script:final()

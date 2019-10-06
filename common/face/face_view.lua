@@ -44,6 +44,7 @@ function Face:set_face(face)
     self:face_changed()
 end
 
+
 function Face:face_changed()
     for k,v in pairs(self.collection_sprites) do
         assert(self.model[k],"no key " .. tostring(k))
@@ -52,7 +53,7 @@ function Face:face_changed()
             sprite.play_flipbook(v,self.model[k].img)
         else
             msg.post(v,COMMON.HASHES.MSG_DISABLE)
-        end    
+        end
     end
 end
 
