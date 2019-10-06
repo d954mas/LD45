@@ -30,16 +30,18 @@ function Script:update(dt)
 		ears = 1,
 		eye =1,
 		eye_brow = 1,
-		face = 0.33,
-		hair = 0.33,
-		mouth = 0.33,
-		nose = 2,
+		face = 1,
+		hair = 1,
+		mouth = 1,
+		other = 1,
+		nose = 1,
 	}
 	local max_scale = 4
 	for i=1,4 do
 		local part = GAME_CONTROLLER.level.face_current_parts[i]
 		local atlas = part.atlas
-		gui.set_texture(self.vh.cells[i].item, part.atlas)
+		if atlas == "clothe" then atlas = "other" end
+		gui.set_texture(self.vh.cells[i].item, atlas)
 		gui.play_flipbook(self.vh.cells[i].item, part.img)
 		gui.set_scale(self.vh.cells[i].item,vmath.vector3(scales[atlas] or 1))
 	end
@@ -47,10 +49,13 @@ function Script:update(dt)
 	gui.set_enabled(gui.get_node("boy_text"),not GAME_CONTROLLER.started)
 
 	for i=1,4 do
+		local part = GAME_CONTROLLER.level.face_current_parts[i]
+		local atlas = part.atlas
+		if atlas == "clothe" then atlas = "other" end
 		local max_size = gui.get_size(self.vh.cells[i].root)
 		local size = gui.get_size(self.vh.cells[i].item)
 		local scale = math.min(max_size.x/size.x,max_size.y/size.y)
-		scale = math.min(max_scale,scale)
+		scale = math.min(max_scale,scale*(scales[atlas] or 1))
 		gui.set_scale(self.vh.cells[i].item,vmath.vector3(scale))
 	end
 end

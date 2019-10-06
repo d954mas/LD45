@@ -44,7 +44,7 @@ fill_with_items(Face.MOUTH,1,2,"lip")
 fill_with_items(Face.NOSE,1,2,"nose")
 
 
-local available = {Face.EYE,Face.EYE_BROW,Face.FACE,Face.HAIR,Face.MOUTH,Face.NOSE}
+local available = {Face.EYE,Face.EYE_BROW,Face.FACE,Face.HAIR,Face.MOUTH,Face.NOSE, Face.CLOTH}
 Face.ALL_AVAILABLE = {}
 
 for _,pages in ipairs(available)do
