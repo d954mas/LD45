@@ -109,14 +109,26 @@ end
 
 function Face:equal(face)
     return self.body == face.body and
-    self.cloth == face.cloth and
-    self.ears == face.ears and
-    self.eye == face.eye and
-    self.eye_brow == face.eye_brow and
-    self.face == face.face and
-    self.hair == face.hair and
-    self.mouth == face.mouth and
-    self.nose == face.nose
+           self.cloth == face.cloth and
+           self.ears == face.ears and
+           self.eye == face.eye and
+           self.eye_brow == face.eye_brow and
+           self.face == face.face and
+           self.hair == face.hair and
+           self.mouth == face.mouth and
+           self.nose == face.nose
+end
+
+function Face:equal_one(face, part)
+    return part == face.body or
+            part == face.cloth or
+            part == face.ears or
+            part == face.eye or
+            part == face.eye_brow or
+            part == face.face or
+            part == face.hair or
+            part == face.mouth or
+            part == face.nose
 end
 
 --for DEBUG

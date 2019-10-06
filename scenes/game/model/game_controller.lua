@@ -65,6 +65,9 @@ function M:item_cell_clicked(i)
 	local part = self.level.face_current_parts[i]
 	self.level.face:change_part(part)
 	self.level.face:changed()
+	if self.level.face:equal_one(self.level.face_ideal, part) then
+		sound.play("/sounds#correct")
+	end
 	if self.level.face:equal(self.level.face_ideal) then
 		self.win = true
 	else
