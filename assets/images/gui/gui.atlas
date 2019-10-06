@@ -37,6 +37,9 @@ images {
 images {
   image: "/assets/images/gui/telephone.jpg"
 }
+images {
+  image: "/assets/images/gui/plashka1.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
