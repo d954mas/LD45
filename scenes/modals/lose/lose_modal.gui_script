@@ -13,6 +13,8 @@ function Script:init()
 	self.vh = {
 		btn_back = {name = "btn_back", root = gui.get_node("btn_back/bg")},
 	}
+	gui.play_spine_anim(gui.get_node("spine"),"lose",gui.PLAYBACK_ONCE_FORWARD)
+
 end
 
 

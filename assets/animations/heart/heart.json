@@ -1,0 +1,359 @@
+{
+  "skeleton": {
+    "width": 761,
+    "height": 723,
+    "fps": 24,
+    "hash": " ",
+    "name": "Armature"
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "x": 20,
+      "y": 900.35,
+      "name": "win",
+      "parent": "root"
+    },
+    {
+      "x": 35.1643,
+      "y": 645.1044,
+      "name": "part1",
+      "parent": "root"
+    },
+    {
+      "x": -11.7036,
+      "y": 648.4228,
+      "name": "part2",
+      "parent": "root"
+    }
+  ],
+  "slots": [
+    {
+      "name": "win_heart",
+      "bone": "win",
+      "attachment": "win_heart"
+    },
+    {
+      "name": "part1",
+      "bone": "part1",
+      "attachment": "part1"
+    },
+    {
+      "name": "part2",
+      "bone": "part2",
+      "attachment": "part2"
+    },
+    {
+      "name": "break1",
+      "bone": "root",
+      "attachment": "break1"
+    },
+    {
+      "name": "break2",
+      "bone": "root",
+      "attachment": "break2"
+    }
+  ],
+  "skins": {
+    "default": {
+      "break2": {
+        "break2": {
+		"width": 93, "height": 191,
+          "name": "break2",
+          "x": -9.5,
+          "y": 699.5
+        }
+      },
+      "win_heart": {
+        "win_heart": {
+		"width": 761, "height": 723,
+          "name": "win_heart",
+          "x": 0.5,
+          "y": 62.15
+        }
+      },
+      "part1": {
+        "part1": {
+		"width": 458, "height": 626,
+          "name": "part1",
+          "x": 136.84,
+          "y": 271.9
+        }
+      },
+      "part2": {
+        "part2": {
+		"width": 430, "height": 723,
+          "name": "part2",
+          "x": -133.3,
+          "y": 314.08
+        }
+      },
+      "break1": {
+        "break1": {
+		"width": 127, "height": 226,
+          "name": "break1",
+          "x": 6.5,
+          "y": 880
+        }
+      }
+    }
+  },
+  "animations": {
+    "win": {
+      "bones": {
+        "win": {
+          "scale": [
+            {
+              "time": 0,
+              "x": 0.2,
+              "y": 0.2
+            },
+            {
+              "time": 1.0417,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        }
+      },
+      "slots": {
+        "win_heart": {
+          "color": [
+            {
+              "time": 0,
+              "color": "7F4D4DFF"
+            },
+            {
+              "time": 1.0417,
+              "color": "FF0000FF"
+            }
+          ]
+        },
+        "part1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            }
+          ]
+        },
+        "part2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            }
+          ]
+        },
+        "break1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            }
+          ]
+        },
+        "break2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            }
+          ]
+        }
+      }
+    },
+    "lose": {
+      "bones": {
+        "part1": {
+          "translate": [
+            {
+              "time": 0,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.25
+            },
+            {
+              "time": 1.0417,
+              "x": 50.02,
+              "y": -30.01
+            }
+          ],
+          "rotate": [
+            {
+              "time": 0,
+              "curve": "stepped",
+              "angle": 0
+            },
+            {
+              "time": 0.25,
+              "angle": 0
+            },
+            {
+              "time": 0.8333,
+              "angle": -13.28
+            }
+          ],
+          "shear": [
+            {
+              "time": 0,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.25
+            },
+            {
+              "time": 0.8333
+            }
+          ]
+        },
+        "part2": {
+          "translate": [
+            {
+              "time": 0,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.25
+            },
+            {
+              "time": 1.0417,
+              "x": -63.35,
+              "y": 76.69
+            }
+          ],
+          "rotate": [
+            {
+              "time": 0,
+              "curve": "stepped",
+              "angle": 0
+            },
+            {
+              "time": 0.25,
+              "angle": 0
+            },
+            {
+              "time": 1.0417,
+              "angle": -1
+            }
+          ],
+          "shear": [
+            {
+              "time": 0,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.25
+            },
+            {
+              "time": 1.0417
+            }
+          ]
+        }
+      },
+      "slots": {
+        "win_heart": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": "win_heart"
+            },
+            {
+              "time": 0.25,
+              "name": ""
+            }
+          ]
+        },
+        "part1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            },
+            {
+              "time": 0.25,
+              "name": "part1"
+            }
+          ],
+          "color": [
+            {
+              "time": 0,
+              "curve": "stepped",
+              "color": "FFFFFFFF"
+            },
+            {
+              "time": 0.25,
+              "color": "FFFFFFFF"
+            },
+            {
+              "time": 1.0417,
+              "color": "7F4D4DFF"
+            }
+          ]
+        },
+        "part2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            },
+            {
+              "time": 0.25,
+              "name": "part2"
+            }
+          ],
+          "color": [
+            {
+              "time": 0,
+              "curve": "stepped",
+              "color": "FFFFFFFF"
+            },
+            {
+              "time": 0.25,
+              "color": "FFFFFFFF"
+            },
+            {
+              "time": 1.0417,
+              "color": "7F4D4DFF"
+            }
+          ]
+        },
+        "break1": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            },
+            {
+              "time": 0.0833,
+              "name": "break1"
+            },
+            {
+              "time": 0.25,
+              "name": ""
+            }
+          ]
+        },
+        "break2": {
+          "attachment": [
+            {
+              "time": 0,
+              "name": ""
+            },
+            {
+              "time": 0.1667,
+              "name": "break2"
+            },
+            {
+              "time": 0.25,
+              "name": ""
+            }
+          ]
+        }
+      }
+    }
+  }
+}

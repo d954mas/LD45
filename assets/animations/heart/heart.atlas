@@ -1,0 +1,18 @@
+images {
+  image: "/assets/animations/heart/win_heart.png"
+}
+images {
+  image: "/assets/animations/heart/part1.png"
+}
+images {
+  image: "/assets/animations/heart/part2.png"
+}
+images {
+  image: "/assets/animations/heart/break1.png"
+}
+images {
+  image: "/assets/animations/heart/break2.png"
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
