@@ -7,6 +7,12 @@ images {
 images {
   image: "/assets/images/items/face/face_3.png"
 }
+images {
+  image: "/assets/images/items/face/face_4.png"
+}
+images {
+  image: "/assets/images/items/face/face_5.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

@@ -8,6 +8,7 @@ function Script:bind_vh()
 	self.vh = {
 		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
 	}
+	self.last_item = {}
 end
 
 function Script:init()
@@ -23,8 +24,8 @@ end
 
 
 function Script:on_input(action_id, action)
-	GUI_UTILS.btn_question(self.vh.btn_question.name,action_id,action)
-	BUTTONS_ITEMS.button_items(action_id,action)
+	GUI_UTILS.btn_question(self.vh.btn_question.name, action_id, action)
+	BUTTONS_ITEMS.button_items(self.last_item, action_id, action)
 end
 
 

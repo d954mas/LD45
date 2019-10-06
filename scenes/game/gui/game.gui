@@ -3,6 +3,30 @@ fonts {
   name: "roboto_bold"
   font: "/assets/fonts/roboto_bold.font"
 }
+textures {
+  name: "lip"
+  texture: "/assets/images/items/lip/lip.atlas"
+}
+textures {
+  name: "hair"
+  texture: "/assets/images/items/hair/hair.atlas"
+}
+textures {
+  name: "eyes"
+  texture: "/assets/images/items/eyes/eyes.atlas"
+}
+textures {
+  name: "face"
+  texture: "/assets/images/items/face/face.atlas"
+}
+textures {
+  name: "eyebrow"
+  texture: "/assets/images/items/eyebrow/eyebrow.atlas"
+}
+textures {
+  name: "nose"
+  texture: "/assets/images/items/nose/nose.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
