@@ -41,6 +41,11 @@ function Scene:on_update(dt)
     BaseScene.on_update(self,dt)
     GAME_CONTROLLER:update(dt)
     msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
+
+    if GAME_CONTROLLER.win then
+        label.set_text("/lbl_start#label","WIN")
+        msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
+    end
 end
 
 function Scene:on_input(action_id, action)

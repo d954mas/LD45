@@ -46,7 +46,32 @@ function Level:face_current_parts_change()
 			end
 			if self.face[part.name] == part then part = nil end
 		end
-		self.face_current_parts[i] =part
+		self.face_current_parts[i] = part
+	end
+
+	local have_needed_part = false
+	for i=1,4 do
+		local part = self.face_current_parts[i]
+		if self.face_ideal[part.name] == part then
+			have_needed_part = true
+			print("take:" .. i)
+			break
+		end
+	end
+	if not have_needed_part then
+		local idx = math.random(1,#self.face_current_parts)
+		local part = self.face_current_parts[idx]
+		while not part or self.face_ideal[part.name] ~= part  do
+			part = table.remove(self.face_available_parts)
+			if not part then
+				self.face_available_parts = COMMON.LUME.clone(Face.ALL_AVAILABLE)
+				COMMON.LUME.shuffle(self.face_available_parts)
+			end
+			if part and self.face[part.name] == part then part = nil end
+		end
+		assert(part)
+		self.face_current_parts[idx] = part
+		print("take:" .. idx)
 	end
 end
 

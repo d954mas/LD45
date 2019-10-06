@@ -107,6 +107,18 @@ function Face:change_part(part)
     self:changed()
 end
 
+function Face:equal(face)
+    return self.body == face.body and
+    self.cloth == face.cloth and
+    self.ears == face.ears and
+    self.eye == face.eye and
+    self.eye_brow == face.eye_brow and
+    self.face == face.face and
+    self.hair == face.hair and
+    self.mouth == face.mouth and
+    self.nose == face.nose
+end
+
 --for DEBUG
 Face.ALL = {}
 

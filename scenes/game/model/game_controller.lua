@@ -14,6 +14,7 @@ local M = COMMON.class("GameController")
 function M:reset()
 	ENTITIES.clear()
 	self.level:dispose()
+	self.win = false
 end
 
 function M:initialize()
@@ -42,10 +43,15 @@ function M:on_input(action_id,action)
 end
 
 function M:item_cell_clicked(i)
+	if self.win then return end
 	local part = self.level.face_current_parts[i]
 	self.level.face:change_part(part)
 	self.level.face:changed()
-	self.level:face_current_parts_change()
+	if self.level.face:equal(self.level.face_ideal) then
+		self.win = true
+	else
+		self.level:face_current_parts_change()
+	end
 end
 
 
