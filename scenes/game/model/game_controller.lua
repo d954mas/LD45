@@ -70,12 +70,12 @@ function M:item_cell_clicked(i)
 	else
 		sound.play("/sounds#wrong")
 	end
-		if self.level.face:equal(self.level.face_ideal) then
-			self.win = true
-		else
-			self.level:face_current_parts_change()
-		end
+	if self.level.face:equal(self.level.face_ideal) then
+		self.win = true
+	else
+		self.level:face_current_parts_change()
 	end
+end
 
 
 local m =  M()
