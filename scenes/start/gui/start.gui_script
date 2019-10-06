@@ -14,6 +14,7 @@ local Script = COMMON.new_n28s()
 function Script:bind_vh()
 	self.vh = {
 		btn_send = {name = "btn_send", root = gui.get_node("btn_send/bg")},
+		btn_play = {name = "btn_play", root = gui.get_node("btn_play/bg")},
 		btn_debug_face = {name = "btn_debug_face", root = gui.get_node("btn_debug_face/bg")},
 	}
 
@@ -21,10 +22,16 @@ function Script:bind_vh()
 end
 
 function Script:init()
+	GUI_SHOW_FACE = false
 	self:bind_vh()
 	COMMON.input_acquire()
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
 	self.state = STATES.VIBRATE
+
+	gui.set_enabled(gui.get_node("phrase_1"),false)
+	gui.set_enabled(gui.get_node("phrase_2"),false)
+	gui.set_enabled(gui.get_node("phrase_3"),false)
+	gui.set_enabled(self.vh.btn_play.root,false)
 end
 
 function Script:update(dt)
@@ -40,11 +47,26 @@ function Script:on_input(action_id, action)
 	if self.state == STATES.VIBRATE and action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
 		self.state = STATES.SHOW_CHAT
 		gui.play_spine_anim(gui.get_node("spine"),"phone_chat",gui.PLAYBACK_ONCE_FORWARD,{},function()
-			print("DONE")
 			gui.set_enabled(self.vh.btn_send.root,true)
 		end)
+		self.scheduler:schedule(function ()
+			COMMON.coroutine_wait(0.5)
+			gui.set_enabled(gui.get_node("phrase_1"),true)
+			COMMON.coroutine_wait(0.5)
+			gui.set_enabled(gui.get_node("phrase_2"),true)
+			COMMON.coroutine_wait(0.5)
+			gui.set_enabled(gui.get_node("phrase_3"),true)
+		end,0)
 	end
 	GOOEY_DL.button(self.vh.btn_send.name, action_id, action, function(button)
+		gui.set_enabled(self.vh.btn_play.root,true)
+		gui.set_enabled(gui.get_node("spine"),false)
+		gui.set_enabled(gui.get_node("phrase_1"),false)
+		gui.set_enabled(gui.get_node("phrase_2"),false)
+		gui.set_enabled(gui.get_node("phrase_3"),false)
+		GUI_SHOW_FACE = true
+	end)
+	GOOEY_DL.button(self.vh.btn_play.name, action_id, action, function(button)
 		SM:show("GameScene")
 	end)
 	GOOEY_DL.button(self.vh.btn_debug_face.name, action_id, action, function(button)
