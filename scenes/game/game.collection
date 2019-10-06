@@ -43,8 +43,8 @@ collection_instances {
   id: "man_ideal"
   collection: "/go/collections/man.collection"
   position {
-    x: 265.0
-    y: 1539.0
+    x: 332.0
+    y: 1521.0
     z: 0.0
   }
   rotation {
@@ -54,8 +54,8 @@ collection_instances {
     w: 0.99836457
   }
   scale3 {
-    x: 0.33
-    y: 0.33
+    x: 0.5
+    y: 0.5
     z: 1.0
   }
 }
@@ -108,7 +108,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 220.333\n"
-  "    y: 2023.667\n"
+  "    y: 1341.167\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -131,8 +131,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.6
-    y: 0.6
+    x: 0.8
+    y: 0.8
     z: 1.0
   }
 }
@@ -142,8 +142,8 @@ embedded_instances {
   "  id: \"girl\"\n"
   "  component: \"/assets/animations/girl/girl.spinemodel\"\n"
   "  position {\n"
-  "    x: 16.0\n"
-  "    y: -64.0\n"
+  "    x: 17.0\n"
+  "    y: -91.0\n"
   "    z: 0.001\n"
   "  }\n"
   "  rotation {\n"
@@ -195,8 +195,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 750.0
-    y: 1498.0
+    x: 811.0
+    y: 1458.0
     z: 0.0
   }
   rotation {
@@ -213,27 +213,8 @@ embedded_instances {
 }
 embedded_instances {
   id: "photo"
+  children: "go1"
   data: "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/assets/images/gui/gui.atlas\\\"\\n"
-  "default_animation: \\\"photo\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 249.0\n"
-  "    y: 1589.0\n"
-  "    z: -0.95\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
   "  id: \"sprite1\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/images/gui/gui.atlas\\\"\\n"
@@ -242,8 +223,8 @@ embedded_instances {
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
-  "    x: 235.0\n"
-  "    y: 1821.0\n"
+  "    x: 216.429\n"
+  "    y: 1310.285\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -266,82 +247,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "lbl_start"
-  data: "embedded_components {\n"
-  "  id: \"label\"\n"
-  "  type: \"label\"\n"
-  "  data: \"size {\\n"
-  "  x: 333.0\\n"
-  "  y: 32.0\\n"
-  "  z: 0.0\\n"
-  "  w: 0.0\\n"
-  "}\\n"
-  "scale {\\n"
-  "  x: 3.0\\n"
-  "  y: 3.0\\n"
-  "  z: 1.0\\n"
-  "  w: 0.0\\n"
-  "}\\n"
-  "color {\\n"
-  "  x: 1.0\\n"
-  "  y: 1.0\\n"
-  "  z: 1.0\\n"
-  "  w: 1.0\\n"
-  "}\\n"
-  "outline {\\n"
-  "  x: 0.0\\n"
-  "  y: 0.0\\n"
-  "  z: 0.0\\n"
-  "  w: 1.0\\n"
-  "}\\n"
-  "shadow {\\n"
-  "  x: 0.0\\n"
-  "  y: 0.0\\n"
-  "  z: 0.0\\n"
-  "  w: 1.0\\n"
-  "}\\n"
-  "leading: 1.0\\n"
-  "tracking: 0.0\\n"
-  "pivot: PIVOT_CENTER\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
-  "line_break: true\\n"
-  "text: \\\"Alience still my face. But i can make new from nothing\\\"\\n"
-  "font: \\\"/assets/fonts/roboto_bold.font\\\"\\n"
-  "material: \\\"/builtins/fonts/label-df.material\\\"\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 134.0\n"
-  "    y: -158.0\n"
-  "    z: 1.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: -859.0
-    y: 940.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
+    x: 1.4
+    y: 1.4
     z: 1.0
   }
 }
@@ -350,7 +257,7 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"timer\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/assets/sounds/timer.wav\\\"\\n"
+  "  data: \"sound: \\\"/assets/sounds/timer.ogg\\\"\\n"
   "looping: 1\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
@@ -372,7 +279,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"loose\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/assets/sounds/loose.wav\\\"\\n"
+  "  data: \"sound: \\\"/assets/sounds/loose.ogg\\\"\\n"
   "looping: 0\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
@@ -394,7 +301,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"win\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/assets/sounds/win.wav\\\"\\n"
+  "  data: \"sound: \\\"/assets/sounds/win.ogg\\\"\\n"
   "looping: 0\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
@@ -416,7 +323,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"correct\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/assets/sounds/correct.wav\\\"\\n"
+  "  data: \"sound: \\\"/assets/sounds/correct.ogg\\\"\\n"
   "looping: 0\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
@@ -438,7 +345,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"wrong\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/assets/sounds/wrong.wav\\\"\\n"
+  "  data: \"sound: \\\"/assets/sounds/wrong.ogg\\\"\\n"
   "looping: 0\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
@@ -512,6 +419,46 @@ embedded_instances {
   scale3 {
     x: 1.0
     y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "go1"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/images/gui/gui.atlas\\\"\\n"
+  "default_animation: \\\"photo\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 230.429\n"
+  "    y: 1403.107\n"
+  "    z: -0.95\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 0.8
     z: 1.0
   }
 }

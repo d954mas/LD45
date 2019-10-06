@@ -8,19 +8,10 @@ images {
   image: "/assets/images/gui/icon_question.png"
 }
 images {
-  image: "/assets/images/gui/icon_man.png"
-}
-images {
   image: "/assets/images/gui/chat_circle.png"
 }
 images {
-  image: "/assets/images/gui/phone.png"
-}
-images {
   image: "/assets/images/gui/circle.png"
-}
-images {
-  image: "/assets/images/gui/icon_woman.jpg"
 }
 images {
   image: "/assets/images/gui/ideal.png"
@@ -35,10 +26,19 @@ images {
   image: "/assets/images/gui/button_cloze.png"
 }
 images {
-  image: "/assets/images/gui/telephone.jpg"
+  image: "/assets/images/gui/telephone.png"
 }
 images {
   image: "/assets/images/gui/plashka1.png"
+}
+images {
+  image: "/assets/images/gui/button.png"
+}
+images {
+  image: "/assets/images/gui/grey_box.png"
+}
+images {
+  image: "/assets/images/gui/button_white.png"
 }
 margin: 0
 extrude_borders: 2

@@ -7,7 +7,6 @@ local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.vh = {
-		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
 		btn_back = {name = "btn_back", root = gui.get_node("btn_back/bg")},
 		cells = {
 			{name = "cell_1",root = gui.get_node("cell_1/root"), item = gui.get_node("cell_1/root/item")},
@@ -34,9 +33,9 @@ function Script:update(dt)
 		hair = 1,
 		mouth = 1,
 		other = 1,
-		nose = 1,
+		nose = 0.66,
 	}
-	local max_scale = 4
+	local max_scale = 3.5
 	for i=1,4 do
 		local part = GAME_CONTROLLER.level.face_current_parts[i]
 		local atlas = part.atlas
@@ -66,7 +65,6 @@ end
 
 
 function Script:on_input(action_id, action)
-	GUI_UTILS.btn_question(self.vh.btn_question.name,action_id,action)
 	for i=1,4 do
 		local cell = self.vh.cells[i].root
 		if gui.pick_node(cell,action.x,action.y)  and action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then

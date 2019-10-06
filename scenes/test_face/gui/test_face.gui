@@ -143,7 +143,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "dirtylarry/button_normal"
+  texture: "dirtylarry/button"
   id: "btn_prev/bg"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -191,9 +191,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.0
+    y: 0.0
+    z: 0.0
     w: 1.0
   }
   type: TYPE_TEXT
@@ -301,7 +301,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "dirtylarry/button_normal"
+  texture: "dirtylarry/button"
   id: "btn_next/bg"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -349,9 +349,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.0
+    y: 0.0
+    z: 0.0
     w: 1.0
   }
   type: TYPE_TEXT
@@ -459,7 +459,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "dirtylarry/button_normal"
+  texture: "dirtylarry/button"
   id: "btn_back/bg"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -507,9 +507,9 @@ nodes {
     w: 1.0
   }
   color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.0
+    y: 0.0
+    z: 0.0
     w: 1.0
   }
   type: TYPE_TEXT

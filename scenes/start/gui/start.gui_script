@@ -3,6 +3,7 @@ local GUI_UTILS = require "libs.gui_utils"
 local GOOEY_DL = require "gooey.themes.dirtylarry.dirtylarry"
 local SM = require "libs.sm.sm"
 local LEVELS = require "scenes.game.model.levels"
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 
 local STATES = {
 	VIBRATE = "VIBRATE",
@@ -15,6 +16,7 @@ function Script:bind_vh()
 	self.vh = {
 		btn_send = {name = "btn_send", root = gui.get_node("btn_send/bg")},
 		btn_play = {name = "btn_play", root = gui.get_node("btn_play/bg")},
+		btn_new_photo = {name = "btn_new_photo", root = gui.get_node("btn_new_photo/bg")},
 		btn_debug_face = {name = "btn_debug_face", root = gui.get_node("btn_debug_face/bg")},
 	}
 
@@ -32,6 +34,8 @@ function Script:init()
 	gui.set_enabled(gui.get_node("phrase_2"),false)
 	gui.set_enabled(gui.get_node("phrase_3"),false)
 	gui.set_enabled(self.vh.btn_play.root,false)
+	gui.set_enabled(self.vh.btn_send.root,false)
+	gui.set_enabled(self.vh.btn_new_photo.root,false)
 end
 
 function Script:update(dt)
@@ -63,6 +67,8 @@ function Script:on_input(action_id, action)
 	end
 	GOOEY_DL.button(self.vh.btn_send.name, action_id, action, function(button)
 		gui.set_enabled(self.vh.btn_play.root,true)
+		gui.set_enabled(self.vh.btn_new_photo.root,true)
+		gui.set_enabled(self.vh.btn_send.root,false)
 		gui.set_enabled(gui.get_node("spine"),false)
 		gui.set_enabled(gui.get_node("phrase_1"),false)
 		gui.set_enabled(gui.get_node("phrase_2"),false)
@@ -71,6 +77,9 @@ function Script:on_input(action_id, action)
 	end)
 	GOOEY_DL.button(self.vh.btn_play.name, action_id, action, function(button)
 		SM:show("GameScene", sound.play("/sounds#chat_2"))
+	end)
+	GOOEY_DL.button(self.vh.btn_new_photo.name, action_id, action, function(button)
+		GAME_CONTROLLER.level.face_ideal:random()
 	end)
 	GOOEY_DL.button(self.vh.btn_debug_face.name, action_id, action, function(button)
 		SM:show("TestFace")

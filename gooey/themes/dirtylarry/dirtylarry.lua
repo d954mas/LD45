@@ -26,10 +26,12 @@ local LISTITEM_NORMAL = hash("button_normal")
 
 
 local function refresh_button(button)
+	local scale = button.start_scale or gui.get_scale(button.node)
+	button.start_scale = scale
 	if button.pressed then
-		gui.play_flipbook(button.node, BUTTON_PRESSED)
+		gui.set_scale(button.node,scale * 0.9)
 	else
-		gui.play_flipbook(button.node, BUTTON_NORMAL)
+		gui.set_scale(button.node,scale)
 	end
 end
 function M.button(node_id, action_id, action, fn)
