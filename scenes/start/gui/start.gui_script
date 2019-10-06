@@ -70,7 +70,7 @@ function Script:on_input(action_id, action)
 		GUI_SHOW_FACE = true
 	end)
 	GOOEY_DL.button(self.vh.btn_play.name, action_id, action, function(button)
-		SM:show("GameScene")
+		SM:show("GameScene", sound.play("/sounds#chat_2"))
 	end)
 	GOOEY_DL.button(self.vh.btn_debug_face.name, action_id, action, function(button)
 		SM:show("TestFace")
