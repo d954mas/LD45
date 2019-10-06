@@ -2,6 +2,7 @@ local COMMON = require "libs.common"
 local ENTITIES = require "scenes.game.model.ecs.entities.entities"
 local ECS_WORLD = require "scenes.game.model.ecs.ecs"
 local Face = require "common.face.face_model"
+local FaceView = require "common.face.face_view"
 
 local TAG = "Level"
 
@@ -14,6 +15,8 @@ function Level:initialize()
 	self.scheduler = COMMON.RX.CooperativeScheduler.create()
 	self:register_world_entities_callbacks()
 	self.face = Face()
+	self.face_ideal = Face()
+	self.face_ideal:random()
 end
 
 function Level:register_world_entities_callbacks()
@@ -25,6 +28,26 @@ end
 --region prepare
 -- prepared to play. Call it after create and before play
 function Level:prepare()
+	self.face_available_parts = {}
+	self.face_current_parts = {}
+	self:face_current_parts_change()
+	self.face_ideal:random()
+end
+
+function Level:face_current_parts_change()
+	for i=1,4 do
+		local part = nil
+		while not part do
+			part = table.remove(self.face_available_parts)
+			if not part then
+				self.face_available_parts = COMMON.LUME.clone(Face.ALL_AVAILABLE)
+				COMMON.LUME.shuffle(self.face_available_parts)
+				part = table.remove(self.face_available_parts)
+			end
+			if self.face[part.name] == part then part = nil end
+		end
+		self.face_current_parts[i] =part
+	end
 end
 
 

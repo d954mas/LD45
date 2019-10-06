@@ -2,13 +2,15 @@ local COMMON = require "libs.common"
 
 ---@class FaceItem
 local FaceItem = COMMON.class("FaceItem")
-function FaceItem:initialize(img)
+function FaceItem:initialize(img,atlas,name)
     self.img = hash(img)
+    self.atlas = atlas
+    self.name = name
 end
 
 local function fill_with_items(list,start_v,end_v,name)
     for i=start_v,end_v do
-        table.insert(list,FaceItem(name .. "_" .. i))
+        table.insert(list,FaceItem(name .. "_" .. i,name,list.name))
     end
 end
 
@@ -25,6 +27,9 @@ Face.HAIR = {name = "hair"}
 Face.MOUTH = {name = "mouth"}
 Face.NOSE = {name = "nose"}
 
+Face.EMPTY = FaceItem("sss")
+Face.EMPTY.img = nil
+
 ---@type FaceItem[][]
 Face.ORDERED_PARTS = {Face.BODY,Face.CLOTH,Face.FACE,Face.EARS,Face.EYE,Face.EYE_BROW,Face.HAIR,Face.MOUTH,Face.NOSE}
 
@@ -37,6 +42,16 @@ fill_with_items(Face.FACE,1,5,"face")
 fill_with_items(Face.HAIR,1,3,"hair")
 fill_with_items(Face.MOUTH,1,2,"lip")
 fill_with_items(Face.NOSE,1,3,"nose")
+
+
+local available = {Face.EYE,Face.EYE_BROW,Face.FACE,Face.HAIR,Face.MOUTH,Face.NOSE}
+Face.ALL_AVAILABLE = {}
+
+for _,pages in ipairs(available)do
+    for _,page in ipairs(pages)do
+        table.insert(Face.ALL_AVAILABLE,page)
+    end
+end
 
 
 
@@ -55,12 +70,12 @@ function Face:initialize(face)
         self.body = Face.BODY[1]
         self.cloth = Face.CLOTH[1]
         self.ears = Face.EARS[1]
-        self.eye = Face.EYE[1]
-        self.eye_brow = Face.EYE_BROW[1]
-        self.face = Face.FACE[1]
-        self.hair = Face.HAIR[1]
-        self.mouth = Face.MOUTH[1]
-        self.nose = Face.NOSE[1]
+        self.eye = Face.EMPTY
+        self.eye_brow = Face.EMPTY
+        self.face = COMMON.LUME.randomchoice(Face.FACE)
+        self.hair = Face.EMPTY
+        self.mouth = Face.EMPTY
+        self.nose = Face.EMPTY
     end
 
 end
@@ -85,6 +100,11 @@ end
 
 function Face:changed()
     if self.view then self.view:face_changed() end
+end
+
+function Face:change_part(part)
+    self[part.name] = part
+    self:changed()
 end
 
 --for DEBUG

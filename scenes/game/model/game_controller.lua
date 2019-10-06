@@ -41,6 +41,13 @@ function M:on_input(action_id,action)
 	
 end
 
+function M:item_cell_clicked(i)
+	local part = self.level.face_current_parts[i]
+	self.level.face:change_part(part)
+	self.level.face:changed()
+	self.level:face_current_parts_change()
+end
+
 
 local m =  M()
 

@@ -22,6 +22,12 @@ images {
 images {
   image: "/assets/images/gui/icon_woman.jpg"
 }
+images {
+  image: "/assets/images/gui/ideal.png"
+}
+images {
+  image: "/assets/images/gui/photo.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

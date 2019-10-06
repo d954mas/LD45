@@ -2,6 +2,7 @@ local BaseScene = require "libs.sm.scene"
 local COMMON = require "libs.common"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local SM = require "libs.sm.sm"
+local FaceView = require "common.face.face_view"
 
 ---@class GameScene:Scene
 local Scene = BaseScene:subclass("GameScene")
@@ -11,6 +12,9 @@ end
 function Scene:on_show()
     COMMON.input_acquire()
     spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_LOOP_FORWARD)
+    self.face_view = FaceView("/man",GAME_CONTROLLER.level.face)
+    self.face_ideal = FaceView("/man_ideal",GAME_CONTROLLER.level.face_ideal)
+    GAME_CONTROLLER.level.face:set_view(self.face_view)
 end
 
 function Scene:on_hide()

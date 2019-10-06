@@ -104,7 +104,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/question.gui"
+  template: "/scenes/test_face/templates/question.gui"
   template_node_child: false
 }
 nodes {
@@ -309,7 +309,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/chat_woman.gui"
+  template: "/scenes/test_face/templates/chat_woman.gui"
   template_node_child: false
 }
 nodes {
@@ -633,7 +633,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/chat_man.gui"
+  template: "/scenes/test_face/templates/chat_man.gui"
   template_node_child: false
 }
 nodes {
@@ -958,7 +958,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/chat_man.gui"
+  template: "/scenes/test_face/templates/chat_man.gui"
   template_node_child: false
 }
 nodes {
@@ -1284,7 +1284,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/chat_woman.gui"
+  template: "/scenes/test_face/templates/chat_woman.gui"
   template_node_child: false
 }
 nodes {
@@ -1608,7 +1608,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/chat_man.gui"
+  template: "/scenes/test_face/templates/chat_man.gui"
   template_node_child: false
 }
 nodes {
@@ -2383,6 +2383,7 @@ nodes {
   size_mode: SIZE_MODE_AUTO
   spine_scene: "phone"
   spine_default_animation: "vibration_phone"
+  spine_skin: ""
 }
 nodes {
   position {

@@ -46,11 +46,13 @@ end
 
 function Face:face_changed()
     for k,v in pairs(self.collection_sprites) do
-        if not self.model[k] then
-            print("sss")
-        end
         assert(self.model[k],"no key " .. tostring(k))
-        sprite.play_flipbook(v,self.model[k].img)
+        if self.model[k].img then
+            msg.post(v,COMMON.HASHES.MSG_ENABLE)
+            sprite.play_flipbook(v,self.model[k].img)
+        else
+            msg.post(v,COMMON.HASHES.MSG_DISABLE)
+        end    
     end
 end
 

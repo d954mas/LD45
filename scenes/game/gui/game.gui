@@ -3,6 +3,38 @@ fonts {
   name: "roboto_bold"
   font: "/assets/fonts/roboto_bold.font"
 }
+textures {
+  name: "gui"
+  texture: "/assets/images/gui/gui.atlas"
+}
+textures {
+  name: "eyebrow"
+  texture: "/assets/images/items/eyebrow/eyebrow.atlas"
+}
+textures {
+  name: "eyes"
+  texture: "/assets/images/items/eyes/eyes.atlas"
+}
+textures {
+  name: "face"
+  texture: "/assets/images/items/face/face.atlas"
+}
+textures {
+  name: "hair"
+  texture: "/assets/images/items/hair/hair.atlas"
+}
+textures {
+  name: "lip"
+  texture: "/assets/images/items/lip/lip.atlas"
+}
+textures {
+  name: "nose"
+  texture: "/assets/images/items/nose/nose.atlas"
+}
+textures {
+  name: "other"
+  texture: "/assets/images/items/other/other.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -45,7 +77,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/question.gui"
+  template: "/scenes/test_face/templates/question.gui"
   template_node_child: false
 }
 nodes {
@@ -105,6 +137,60 @@ nodes {
 }
 nodes {
   position {
+    x: 140.0
+    y: 147.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "gui/empty"
+  id: "cells"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 1.0
+  template_node_child: false
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
     x: 0.0
     y: 0.0
     z: 0.0
@@ -136,10 +222,11 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "cell_1"
+  parent: "cells"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/game_item_cell.gui"
+  template: "/scenes/test_face/templates/item_cell.gui"
   template_node_child: false
 }
 nodes {
@@ -162,8 +249,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 1.0
-    y: 1.0
+    x: 257.5
+    y: 257.5
     z: 0.0
     w: 1.0
   }
@@ -175,7 +262,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/empty"
+  texture: "gui/white"
   id: "cell_1/root"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -195,12 +282,12 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   template_node_child: true
-  size_mode: SIZE_MODE_AUTO
+  size_mode: SIZE_MODE_MANUAL
 }
 nodes {
   position {
-    x: 145.0
-    y: 150.0
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -217,8 +304,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 206.0
-    y: 206.0
+    x: 258.0
+    y: 77.0
     z: 0.0
     w: 1.0
   }
@@ -230,8 +317,8 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/white"
-  id: "cell_1/root/bg"
+  texture: "eyes/eyes_1"
+  id: "cell_1/root/item"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -249,16 +336,13 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 3
-  overridden_fields: 14
   template_node_child: true
-  size_mode: SIZE_MODE_MANUAL
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 405.0
-    y: 150.0
+    x: 268.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -288,10 +372,11 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "cell_2"
+  parent: "cells"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/game_item_cell.gui"
+  template: "/scenes/test_face/templates/item_cell.gui"
   template_node_child: false
 }
 nodes {
@@ -314,8 +399,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 1.0
-    y: 1.0
+    x: 257.5
+    y: 257.5
     z: 0.0
     w: 1.0
   }
@@ -327,7 +412,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/empty"
+  texture: "gui/white"
   id: "cell_2/root"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -347,7 +432,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   template_node_child: true
-  size_mode: SIZE_MODE_AUTO
+  size_mode: SIZE_MODE_MANUAL
 }
 nodes {
   position {
@@ -369,8 +454,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 206.0
-    y: 206.0
+    x: 258.0
+    y: 77.0
     z: 0.0
     w: 1.0
   }
@@ -382,8 +467,8 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/white"
-  id: "cell_2/root/bg"
+  texture: "eyes/eyes_1"
+  id: "cell_2/root/item"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -401,16 +486,13 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 2
-  overridden_fields: 3
-  overridden_fields: 14
   template_node_child: true
-  size_mode: SIZE_MODE_MANUAL
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 675.0
-    y: 150.0
+    x: 536.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -440,10 +522,11 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "cell_3"
+  parent: "cells"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/game_item_cell.gui"
+  template: "/scenes/test_face/templates/item_cell.gui"
   template_node_child: false
 }
 nodes {
@@ -466,8 +549,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 1.0
-    y: 1.0
+    x: 257.5
+    y: 257.5
     z: 0.0
     w: 1.0
   }
@@ -479,7 +562,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/empty"
+  texture: "gui/white"
   id: "cell_3/root"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -499,7 +582,7 @@ nodes {
   clipping_inverted: false
   alpha: 1.0
   template_node_child: true
-  size_mode: SIZE_MODE_AUTO
+  size_mode: SIZE_MODE_MANUAL
 }
 nodes {
   position {
@@ -521,8 +604,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 206.0
-    y: 206.0
+    x: 258.0
+    y: 77.0
     z: 0.0
     w: 1.0
   }
@@ -534,8 +617,8 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/white"
-  id: "cell_3/root/bg"
+  texture: "eyes/eyes_1"
+  id: "cell_3/root/item"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -553,15 +636,13 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 14
   template_node_child: true
-  size_mode: SIZE_MODE_MANUAL
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 945.0
-    y: 150.0
+    x: 804.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -591,10 +672,11 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "cell_4"
+  parent: "cells"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/assets/templates/game_item_cell.gui"
+  template: "/scenes/test_face/templates/item_cell.gui"
   template_node_child: false
 }
 nodes {
@@ -617,8 +699,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 1.0
-    y: 1.0
+    x: 257.5
+    y: 257.5
     z: 0.0
     w: 1.0
   }
@@ -630,7 +712,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/empty"
+  texture: "gui/white"
   id: "cell_4/root"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
@@ -649,63 +731,6 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 206.0
-    y: 206.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "gui/white"
-  id: "cell_4/root/bg"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "cell_4/root"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  overridden_fields: 1
-  overridden_fields: 14
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -729,47 +754,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
-    y: 100.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEMPLATE
-  id: "button_item"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  template: "/assets/templates/items.gui"
-  template_node_child: false
-}
-nodes {
-  position {
-    x: 135.0
-    y: 150.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.4
-    y: 0.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 499.0
-    y: 490.0
+    x: 258.0
+    y: 77.0
     z: 0.0
     w: 1.0
   }
@@ -781,178 +767,13 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: "hair/hair_1"
-  id: "button_item/button_1"
+  texture: "eyes/eyes_1"
+  id: "cell_4/root/item"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
   adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 405.0
-    y: 150.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.4
-    y: 0.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 527.0
-    y: 738.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "hair/hair_2"
-  id: "button_item/button_2"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 675.0
-    y: 150.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.4
-    y: 0.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 527.0
-    y: 738.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "hair/hair_2"
-  id: "button_item/button_3"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item"
-  layer: ""
-  inherit_alpha: true
-  slice9 {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
-  }
-  clipping_mode: CLIPPING_MODE_NONE
-  clipping_visible: true
-  clipping_inverted: false
-  alpha: 1.0
-  template_node_child: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 945.0
-    y: 150.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 0.4
-    y: 0.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 496.0
-    y: 417.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_BOX
-  blend_mode: BLEND_MODE_ALPHA
-  texture: "hair/hair_3"
-  id: "button_item/button_4"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  adjust_mode: ADJUST_MODE_FIT
-  parent: "button_item"
+  parent: "cell_4/root"
   layer: ""
   inherit_alpha: true
   slice9 {

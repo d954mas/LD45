@@ -1,12 +1,18 @@
 local COMMON = require "libs.common"
 local GUI_UTILS = require "libs.gui_utils"
-local BUTTONS_ITEMS = require "libs.buttons_items" ---
+local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 
 local Script = COMMON.new_n28s()
 
 function Script:bind_vh()
 	self.vh = {
 		btn_question = {name = "btn_question/root", root = gui.get_node("btn_question/root")},
+		cells = {
+			{name = "cell_1",root = gui.get_node("cell_1/root"), item = gui.get_node("cell_1/root/item")},
+			{name = "cell_2",root = gui.get_node("cell_2/root"), item = gui.get_node("cell_2/root/item")},
+			{name = "cell_3",root = gui.get_node("cell_3/root"), item = gui.get_node("cell_3/root/item")},
+			{name = "cell_4",root = gui.get_node("cell_4/root"), item = gui.get_node("cell_4/root/item")}
+		}
 	}
 end
 
@@ -15,7 +21,26 @@ function Script:init()
 	COMMON.input_acquire()
 end
 
-function Script:update(dt)end
+function Script:update(dt)
+	local scales = {
+		body = 1,
+		cloth = 1,
+		ears = 1,
+		eye =1,
+		eye_brow = 1,
+		face = 0.33,
+		hair = 0.33,
+		mouth = 0.33,
+		nose = 2,
+	}
+	for i=1,4 do
+		local part = GAME_CONTROLLER.level.face_current_parts[i]
+		local atlas = part.atlas
+		gui.set_texture(self.vh.cells[i].item,part.atlas)
+		gui.play_flipbook(self.vh.cells[i].item,part.img)
+		gui.set_scale(self.vh.cells[i].item,vmath.vector3(scales[atlas] or 1))
+	end
+end
 
 function Script:final()
 	COMMON.input_release()
@@ -24,7 +49,12 @@ end
 
 function Script:on_input(action_id, action)
 	GUI_UTILS.btn_question(self.vh.btn_question.name,action_id,action)
-	BUTTONS_ITEMS.button_items(action_id,action)
+	for i=1,4 do
+		local cell = self.vh.cells[i].root
+		if gui.pick_node(cell,action.x,action.y)  and action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
+			GAME_CONTROLLER:item_cell_clicked(i)
+		end
+	end
 end
 
 
