@@ -38,8 +38,8 @@ function Script:update(dt)
 	for i=1,4 do
 		local part = GAME_CONTROLLER.level.face_current_parts[i]
 		local atlas = part.atlas
-		gui.set_texture(self.vh.cells[i].item,part.atlas)
-		gui.play_flipbook(self.vh.cells[i].item,part.img)
+		gui.set_texture(self.vh.cells[i].item, part.atlas)
+		gui.play_flipbook(self.vh.cells[i].item, part.img)
 		gui.set_scale(self.vh.cells[i].item,vmath.vector3(scales[atlas] or 1))
 	end
 end

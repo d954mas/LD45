@@ -3,6 +3,7 @@ local COMMON = require "libs.common"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local SM = require "libs.sm.sm"
 local FaceView = require "common.face.face_view"
+local time = 7
 
 local MAN_PHRASES = {
     "Alince still my face.I need to make new from nothing.",
@@ -21,6 +22,7 @@ end
 function Scene:on_show()
     COMMON.input_acquire()
     spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_LOOP_FORWARD)
+    sound.play("/sounds#timer")
     self.face_view = FaceView("/man",GAME_CONTROLLER.level.face)
     self.face_ideal = FaceView("/man_ideal",GAME_CONTROLLER.level.face_ideal)
     GAME_CONTROLLER.level.face:set_view(self.face_view)
@@ -38,12 +40,21 @@ end
 
 function Scene:on_update(dt)
     self.dt = dt
+    time = time - self.dt
     BaseScene.on_update(self,dt)
     GAME_CONTROLLER:update(dt)
     msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
 
     if GAME_CONTROLLER.win then
+        sound.play("/sounds#win")
         label.set_text("/lbl_start#label","WIN")
+        msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
+    end
+    if time < 0 and time > -1000 then
+        time = -1000
+        sound.stop("/sounds#timer")
+        sound.play("/sounds#loose")
+        label.set_text("/lbl_start#label","LOOSE")
         msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
     end
 end
