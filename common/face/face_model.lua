@@ -34,14 +34,14 @@ Face.EMPTY.img = nil
 Face.ORDERED_PARTS = {Face.BODY,Face.CLOTH,Face.FACE,Face.EARS,Face.EYE,Face.EYE_BROW,Face.HAIR,Face.MOUTH,Face.NOSE}
 
 fill_with_items(Face.BODY,1,1,"body")
-fill_with_items(Face.CLOTH,1,1,"clothe")
+fill_with_items(Face.CLOTH,1,3,"clothe")
 fill_with_items(Face.EARS,1,1,"ears")
-fill_with_items(Face.EYE,1,2,"eyes")
-fill_with_items(Face.EYE_BROW,1,3,"eyebrow")
+fill_with_items(Face.EYE,1,3,"eyes")
+fill_with_items(Face.EYE_BROW,1,4,"eyebrow")
 fill_with_items(Face.FACE,1,5,"face")
-fill_with_items(Face.HAIR,1,3,"hair")
+fill_with_items(Face.HAIR,1,4,"hair")
 fill_with_items(Face.MOUTH,1,2,"lip")
-fill_with_items(Face.NOSE,1,3,"nose")
+fill_with_items(Face.NOSE,1,2,"nose")
 
 
 local available = {Face.EYE,Face.EYE_BROW,Face.FACE,Face.HAIR,Face.MOUTH,Face.NOSE}
