@@ -15,10 +15,16 @@ function M.button_items(last_item, action_id, action)
 	local atlas
 	
 	if action_id == hash("touch") and action.pressed then
-		local buttons = {gui.get_node("button_item/button_1"), 
+		local buttons_sprite = {gui.get_node("button_item/button_1"), 
 						 gui.get_node("button_item/button_2"),
 						 gui.get_node("button_item/button_3"),
 						 gui.get_node("button_item/button_4")
+					}
+
+		local buttons = {gui.get_node("cell_1/root/bg"), 
+						 gui.get_node("cell_2/root/bg"),
+						 gui.get_node("cell_3/root/bg"),
+						 gui.get_node("cell_4/root/bg")
 						}
 
 		for i = 1, #buttons do  										-- <Находим кнопку по которой кликнули.>
@@ -41,8 +47,8 @@ function M.button_items(last_item, action_id, action)
 
 				last_item[i] = ITEMS[atlas][item] 					--<Сохраняем последний спрайт, чтобы не повторялся.>
 				
-				gui.set_texture(buttons[i], ATLAS[atlas])
-				gui.play_flipbook(buttons[i], ITEMS[atlas][item])
+				gui.set_texture(buttons_sprite[i], ATLAS[atlas])
+				gui.play_flipbook(buttons_sprite[i], ITEMS[atlas][item])
 			end
 		end
 	end
