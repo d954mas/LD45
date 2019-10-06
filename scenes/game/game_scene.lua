@@ -3,7 +3,6 @@ local COMMON = require "libs.common"
 local GAME_CONTROLLER = require "scenes.game.model.game_controller"
 local SM = require "libs.sm.sm"
 local FaceView = require "common.face.face_view"
-local time = 7
 
 local MAN_PHRASES = {
     "Alince still my face.I need to make new from nothing.",
@@ -21,8 +20,6 @@ function Scene:initialize()
 end
 function Scene:on_show()
     COMMON.input_acquire()
-    spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_LOOP_FORWARD)
-    sound.play("/sounds#timer")
     self.face_view = FaceView("/man",GAME_CONTROLLER.level.face)
     self.face_ideal = FaceView("/man_ideal",GAME_CONTROLLER.level.face_ideal)
     GAME_CONTROLLER.level.face:set_view(self.face_view)
@@ -40,7 +37,6 @@ end
 
 function Scene:on_update(dt)
     self.dt = dt
-    time = time - self.dt
     BaseScene.on_update(self,dt)
     GAME_CONTROLLER:update(dt)
     msg.post("#",COMMON.HASHES.MSG_POST_UPDATE)
@@ -48,20 +44,20 @@ function Scene:on_update(dt)
     if GAME_CONTROLLER.win then
         sound.play("/sounds#win")
         label.set_text("/lbl_start#label","WIN")
+        sound.stop("/sounds#timer")
         msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
     end
-    if time < 0 and time > -1000 then
-        time = -1000
+    if GAME_CONTROLLER.lose then
+        label.set_text("/lbl_start#label","LOSE")
         sound.stop("/sounds#timer")
-        sound.play("/sounds#loose")
-        label.set_text("/lbl_start#label","LOOSE")
         msg.post("/lbl_start#label",COMMON.HASHES.MSG_ENABLE)
     end
 end
 
 function Scene:on_input(action_id, action)
-    if action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
+    if action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed and  not GAME_CONTROLLER.started then
         msg.post("/lbl_start#label",COMMON.HASHES.MSG_DISABLE)
+        GAME_CONTROLLER:start_game()
     end
 
     return GAME_CONTROLLER:on_input(action_id,action)

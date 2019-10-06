@@ -351,7 +351,7 @@ embedded_instances {
   "  id: \"timer\"\n"
   "  type: \"sound\"\n"
   "  data: \"sound: \\\"/assets/sounds/timer.wav\\\"\\n"
-  "looping: 0\\n"
+  "looping: 1\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
   "pan: 0.0\\n"

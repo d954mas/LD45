@@ -15,6 +15,8 @@ function M:reset()
 	ENTITIES.clear()
 	self.level:dispose()
 	self.win = false
+    self.lose = false
+    self.started = false
 end
 
 function M:initialize()
@@ -29,7 +31,23 @@ function M:load_level()
 end	
 --endregion
 
-function M:update(dt) end
+function M:start_game()
+    self.started = true
+
+    -- Get the current value on component "spine"
+    local playback_rate = go.get("/go#spinemodel", "playback_rate")
+    -- Set the playback_rate to double the previous value.
+    local time = 7.375
+    local need_time = 20
+    self.time_scale = time/need_time
+    sound.play("/sounds#timer")
+	spine.play_anim("/go#spinemodel","animtion0",go.PLAYBACK_ONCE_FORWARD,{playback_rate = self.time_scale},function()
+		if not self.win then self.lose = true end
+	end)
+end
+
+function M:update(dt)
+end
 
 function M:post_update(dt)
 	if self.level then self.level:update(dt) end
